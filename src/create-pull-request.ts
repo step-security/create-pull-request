@@ -126,7 +126,7 @@ export async function createPullRequest(inputs: Inputs): Promise<void> {
       // This command prunes the stale remote ref when the pull request branch was
       // deleted after being merged or closed. Without this the push using
       // '--force-with-lease' fails due to "stale info."
-      // https://github.com/peter-evans/create-pull-request/issues/633
+      // https://github.com/step-security/create-pull-request/issues/633
       await git.exec(['remote', 'prune', branchRemoteName])
     }
     core.endGroup()

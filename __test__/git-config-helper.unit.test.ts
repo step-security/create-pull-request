@@ -3,25 +3,25 @@ import {GitConfigHelper} from '../lib/git-config-helper'
 describe('git-config-helper unit tests', () => {
   test('parseGitRemote successfully parses HTTPS remote URLs', async () => {
     const remote1 = GitConfigHelper.parseGitRemote(
-      'https://github.com/peter-evans/create-pull-request'
+      'https://github.com/step-security/create-pull-request'
     )
     expect(remote1.hostname).toEqual('github.com')
     expect(remote1.protocol).toEqual('HTTPS')
-    expect(remote1.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote1.repository).toEqual('step-security/create-pull-request')
 
     const remote2 = GitConfigHelper.parseGitRemote(
-      'https://xxx:x-oauth-basic@github.com/peter-evans/create-pull-request'
+      'https://xxx:x-oauth-basic@github.com/step-security/create-pull-request'
     )
     expect(remote2.hostname).toEqual('github.com')
     expect(remote2.protocol).toEqual('HTTPS')
-    expect(remote2.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote2.repository).toEqual('step-security/create-pull-request')
 
     const remote3 = GitConfigHelper.parseGitRemote(
-      'https://github.com/peter-evans/create-pull-request.git'
+      'https://github.com/step-security/create-pull-request.git'
     )
     expect(remote3.hostname).toEqual('github.com')
     expect(remote3.protocol).toEqual('HTTPS')
-    expect(remote3.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote3.repository).toEqual('step-security/create-pull-request')
 
     const remote4 = GitConfigHelper.parseGitRemote(
       'https://github.com/peter-evans/ungit'
@@ -38,20 +38,20 @@ describe('git-config-helper unit tests', () => {
     expect(remote5.repository).toEqual('peter-evans/ungit')
 
     const remote6 = GitConfigHelper.parseGitRemote(
-      'https://github.internal.company/peter-evans/create-pull-request'
+      'https://github.internal.company/step-security/create-pull-request'
     )
     expect(remote6.hostname).toEqual('github.internal.company')
     expect(remote6.protocol).toEqual('HTTPS')
-    expect(remote6.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote6.repository).toEqual('step-security/create-pull-request')
   })
 
   test('parseGitRemote successfully parses SSH remote URLs', async () => {
     const remote1 = GitConfigHelper.parseGitRemote(
-      'git@github.com:peter-evans/create-pull-request.git'
+      'git@github.com:step-security/create-pull-request.git'
     )
     expect(remote1.hostname).toEqual('github.com')
     expect(remote1.protocol).toEqual('SSH')
-    expect(remote1.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote1.repository).toEqual('step-security/create-pull-request')
 
     const remote2 = GitConfigHelper.parseGitRemote(
       'git@github.com:peter-evans/ungit.git'
@@ -61,11 +61,11 @@ describe('git-config-helper unit tests', () => {
     expect(remote2.repository).toEqual('peter-evans/ungit')
 
     const remote3 = GitConfigHelper.parseGitRemote(
-      'git@github.internal.company:peter-evans/create-pull-request.git'
+      'git@github.internal.company:step-security/create-pull-request.git'
     )
     expect(remote3.hostname).toEqual('github.internal.company')
     expect(remote3.protocol).toEqual('SSH')
-    expect(remote3.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote3.repository).toEqual('step-security/create-pull-request')
   })
 
   test('parseGitRemote successfully parses GIT remote URLs', async () => {

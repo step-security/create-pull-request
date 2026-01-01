@@ -2395,7 +2395,7 @@ describe('create-or-update-branch tests', () => {
   })
 
   // This failure mode is a limitation of the action. Controlling your own commits cannot be used in detached HEAD state.
-  // https://github.com/peter-evans/create-pull-request/issues/902
+  // https://github.com/step-security/create-pull-request/issues/902
   it('tests failure to create with commits on the working base (during the workflow) in detached HEAD state (WBNR)', async () => {
     // Checkout the HEAD commit SHA
     const headSha = await git.revParse('HEAD')

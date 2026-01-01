@@ -48,24 +48,24 @@ describe('utils tests', () => {
     const url1 = utils.getRemoteUrl(
       'HTTPS',
       'github.com',
-      'peter-evans/create-pull-request'
+      'step-security/create-pull-request'
     )
-    expect(url1).toEqual('https://github.com/peter-evans/create-pull-request')
+    expect(url1).toEqual('https://github.com/step-security/create-pull-request')
 
     const url2 = utils.getRemoteUrl(
       'SSH',
       'github.com',
-      'peter-evans/create-pull-request'
+      'step-security/create-pull-request'
     )
-    expect(url2).toEqual('git@github.com:peter-evans/create-pull-request.git')
+    expect(url2).toEqual('git@github.com:step-security/create-pull-request.git')
 
     const url3 = utils.getRemoteUrl(
       'HTTPS',
       'mygithubserver.com',
-      'peter-evans/create-pull-request'
+      'step-security/create-pull-request'
     )
     expect(url3).toEqual(
-      'https://mygithubserver.com/peter-evans/create-pull-request'
+      'https://mygithubserver.com/step-security/create-pull-request'
     )
   })
 

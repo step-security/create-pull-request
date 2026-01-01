@@ -14,7 +14,7 @@ A common point of confusion is to try and use an existing branch containing chan
 
 If you have an existing branch that you just want to create a PR for, then I recommend using the official [GitHub CLI](https://cli.github.com/manual/gh_pr_create) in a workflow step.
 
-Alternatively, if you are trying to keep a branch up to date with another branch, then you can follow [this example](https://github.com/peter-evans/create-pull-request/blob/main/docs/examples.md#keep-a-branch-up-to-date-with-another).
+Alternatively, if you are trying to keep a branch up to date with another branch, then you can follow [this example](https://github.com/step-security/create-pull-request/blob/main/docs/examples.md#keep-a-branch-up-to-date-with-another).
 
 ## Frequently requested features
 
@@ -24,8 +24,8 @@ This behaviour is fundamental to how the action works and is a conscious design 
 
 If you want to avoid this behaviour there are some things that might work depending on your use case:
 - Check if the pull request branch exists in a separate step before the action runs and act accordingly.
-- Use the [alternative strategy](https://github.com/peter-evans/create-pull-request#alternative-strategy---always-create-a-new-pull-request-branch) of always creating a new PR that won't be updated by the action.
-- [Create your own commits](https://github.com/peter-evans/create-pull-request#create-your-own-commits) each time the action is created/updated.
+- Use the [alternative strategy](https://github.com/step-security/create-pull-request#alternative-strategy---always-create-a-new-pull-request-branch) of always creating a new PR that won't be updated by the action.
+- [Create your own commits](https://github.com/step-security/create-pull-request#create-your-own-commits) each time the action is created/updated.
 
 ### Add a no-verify option to bypass git hooks
 
@@ -37,7 +37,7 @@ So the straightforward solution is to just not install them during the workflow 
 
 - If hooks are automatically enabled by a framework, use an option provided by the framework to disable them. For example, for Husky users, they can be disabled with the `--ignore-scripts` flag, or by setting the `HUSKY` environment variable when the action runs.
   ```yml
-  uses: peter-evans/create-pull-request@v8
+  uses: step-security/create-pull-request@v8
   env:
     HUSKY: '0'
   ```
