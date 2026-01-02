@@ -24,18 +24,18 @@ describe('git-config-helper unit tests', () => {
     expect(remote3.repository).toEqual('step-security/create-pull-request')
 
     const remote4 = GitConfigHelper.parseGitRemote(
-      'https://github.com/peter-evans/ungit'
+      'https://github.com/step-security/create-pull-request'
     )
     expect(remote4.hostname).toEqual('github.com')
     expect(remote4.protocol).toEqual('HTTPS')
-    expect(remote4.repository).toEqual('peter-evans/ungit')
+    expect(remote4.repository).toEqual('step-security/create-pull-request')
 
     const remote5 = GitConfigHelper.parseGitRemote(
-      'https://github.com/peter-evans/ungit.git'
+      'https://github.com/step-security/create-pull-request.git'
     )
     expect(remote5.hostname).toEqual('github.com')
     expect(remote5.protocol).toEqual('HTTPS')
-    expect(remote5.repository).toEqual('peter-evans/ungit')
+    expect(remote5.repository).toEqual('step-security/create-pull-request')
 
     const remote6 = GitConfigHelper.parseGitRemote(
       'https://github.internal.company/step-security/create-pull-request'
@@ -54,11 +54,11 @@ describe('git-config-helper unit tests', () => {
     expect(remote1.repository).toEqual('step-security/create-pull-request')
 
     const remote2 = GitConfigHelper.parseGitRemote(
-      'git@github.com:peter-evans/ungit.git'
+      'git@github.com:step-security/create-pull-request.git'
     )
     expect(remote2.hostname).toEqual('github.com')
     expect(remote2.protocol).toEqual('SSH')
-    expect(remote2.repository).toEqual('peter-evans/ungit')
+    expect(remote2.repository).toEqual('step-security/create-pull-request')
 
     const remote3 = GitConfigHelper.parseGitRemote(
       'git@github.internal.company:step-security/create-pull-request.git'
