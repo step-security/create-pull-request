@@ -79,7 +79,7 @@ describe('git-config-helper unit tests', () => {
   })
 
   test('parseGitRemote fails to parse a remote URL', async () => {
-    const remoteUrl = 'https://github.com/peter-evans'
+    const remoteUrl = 'https://github.com/step-security'
     try {
       GitConfigHelper.parseGitRemote(remoteUrl)
       // Fail the test if an error wasn't thrown

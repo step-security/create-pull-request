@@ -145,7 +145,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
           node-version: '16.x'
       - name: Update dependencies
@@ -181,7 +181,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
           node-version: 16.x
       - run: npm ci
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: 1.8
@@ -425,11 +425,11 @@ curl -XPOST -u "[username]:[token]" \
 
 ### Call the GitHub API from another GitHub Actions workflow
 
-An `on: repository_dispatch` workflow can be triggered from another workflow with [repository-dispatch](https://github.com/peter-evans/repository-dispatch) action.
+An `on: repository_dispatch` workflow can be triggered from another workflow with [repository-dispatch](https://github.com/step-security/repository-dispatch) action.
 
 ```yml
 - name: Repository Dispatch
-  uses: peter-evans/repository-dispatch@v2
+  uses: step-security/repository-dispatch@v4
   with:
     token: ${{ secrets.REPO_ACCESS_TOKEN }}
     repository: username/my-repo

@@ -430,7 +430,7 @@ The action can use GPG to sign commits with a GPG key that you generate yourself
 
 5. Create another repository secret for the key's passphrase, if applicable. e.g. `GPG_PASSPHRASE`
 
-6. The following example workflow shows how to use [crazy-max/ghaction-import-gpg](https://github.com/crazy-max/ghaction-import-gpg) to import your GPG key and allow the action to sign commits.
+6. The following example workflow shows how to use [step-security/ghaction-import-gpg](https://github.com/step-security/ghaction-import-gpg) to import your GPG key and allow the action to sign commits.
 
 > [!IMPORTANT]
 > The `committer` email address *MUST* match the email address used to create your GPG key.
@@ -439,7 +439,7 @@ The action can use GPG to sign commits with a GPG key that you generate yourself
     steps:
       - uses: actions/checkout@v6
 
-      - uses: crazy-max/ghaction-import-gpg@v5
+      - uses: step-security/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
