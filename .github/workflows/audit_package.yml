@@ -11,7 +11,7 @@ on:
         description: "Specify a base branch"
         required: false
         default: "main"
-        node_version:
+      node_version:
         description: "Specify Node.js version (e.g., '18', '20', 'lts/*')"
         required: false
         default: '24'
