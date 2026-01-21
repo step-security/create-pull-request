@@ -41,7 +41,7 @@
     "axios": "^1.13.2",
     "node-fetch-native": "^1.6.7",
     "p-limit": "^6.2.0",
-    "uuid": "^9.0.1"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
