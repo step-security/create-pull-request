@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # <img width="24" height="24" src="docs/assets/logo.svg"> Create Pull Request
 [![CI](https://github.com/step-security/create-pull-request/workflows/CI/badge.svg)](https://github.com/step-security/create-pull-request/actions?query=workflow%3ACI)
 
